@@ -4,9 +4,9 @@ import { DECREMENTAR } from "./consts";
 
 
 export function incrementarContador(cantidad) {
-  return { type: INCREMENTAR, payload: + cantidad};
+  return { type: INCREMENTAR, payload: cantidad++};
 }
 
 export function decrementarContador(cantidad) {
-  return { type: DECREMENTAR, payload: - cantidad};
+  return { type: DECREMENTAR, payload: cantidad--};
 }
