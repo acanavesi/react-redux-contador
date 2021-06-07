@@ -3,15 +3,17 @@ import { useDispatch } from "react-redux";
 import { incrementarContador } from "../redux/actions";
 import { INCREMENTAR } from "../redux/consts";
 
-const Incrementar = () => {
+const Incrementar = ({valor}) => {
   const dispatch = useDispatch();
 
   const handllerClick = () => {
-    dispatch(incrementarContador(1));
+    dispatch(incrementarContador( valor ));
   };
   return (
-    <div>
-      <button onClick={handllerClick}>Incrementar</button>
+    <div className="m-2">
+      <button className="btn btn-success" onClick={handllerClick}>
+        Incrementar en {valor}
+      </button>
     </div>
   );
 };

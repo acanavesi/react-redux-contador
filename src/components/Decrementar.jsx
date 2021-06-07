@@ -3,17 +3,19 @@ import { useDispatch } from 'react-redux';
 import { decrementarContador } from '../redux/actions';
 import { DECREMENTAR } from '../redux/consts';
 
-const Decrementar = () => {
-    const dispatch = useDispatch();
+const Decrementar = ({valor}) => {
+  const dispatch = useDispatch();
 
-    const handllerClick = () => {
-      dispatch(decrementarContador(1));
-    };
-    return (
-      <div>
-        <button onClick={handllerClick}>Decrementar</button>
-      </div>
-    );
-}
+  const handllerClick = () => {
+    dispatch(decrementarContador(valor));
+  };
+  return (
+    <div className="m-2">
+      <button className="btn btn-danger" onClick={handllerClick}>
+        Decrementar en {valor}
+      </button>
+    </div>
+  );
+};
 
 export default Decrementar
